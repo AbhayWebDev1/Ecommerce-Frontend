@@ -1,8 +1,7 @@
 import axios from 'axios';
-
 import * as actionType from '../constants/productConstant';
 
-const URL = 'http://localhost:8000';
+const URL =  process.env.REACT_APP_BACKEND_URL;
 
 export const getProducts = () => async (dispatch) =>{
     try{

@@ -1,9 +1,10 @@
 
 import axios from 'axios';
-
 import * as actionType from '../constants/cartConstant';
 
-const URL = 'http://localhost:8000';
+const URL = process.env.REACT_APP_BACKEND_URL;
+
+console.log("URL from cart : ", process.env.REACT_APP_BACKEND_URL);
 
 export const addToCart = (id, quantity) => async(dispatch) =>  {
       try{

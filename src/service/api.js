@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-const url = 'http://localhost:8000';
+const URL =  process.env.REACT_APP_BACKEND_URL;
 
 export const authenticateSignup = async (data) => {
-    try {
-        return await axios.post(`${url}/signup`, data)
+    try {   
+        return await axios.post(`${URL}/signup`, data)
     } catch (error) {
         console.log('error while calling Signup API: ', error);
     }
@@ -12,7 +12,7 @@ export const authenticateSignup = async (data) => {
 
 export const authenticateLogin = async (data) => {
     try {
-        return await axios.post(`${url}/login`, data)
+        return await axios.post(`${URL}/login`, data)
     } catch (error) {
         console.log('error while calling login API: ', error);
         return error.response;
